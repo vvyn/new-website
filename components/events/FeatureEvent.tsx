@@ -49,6 +49,7 @@ export default function FeatureEvent({ event, onGoing }: EventItemProps) {
     );
   });
 
+  /**
   let tagDiv;
   if (tags.length != 0) {
     tagDiv = (
@@ -58,29 +59,30 @@ export default function FeatureEvent({ event, onGoing }: EventItemProps) {
       </div>
     );
   }
+   */
 
   return (
     <div
       key={id}
       className={
-        pulsingBG +
-        'inline-block max-w-full p-4 m-2 bg-white shadow-sm transition duration-400 hover:shadow-md focus:shadow-md rounded-md hover:bg-ais-blue-gray relative'
+        'font-bold mx-4 h-full p-4 rounded-3xl border-r-4 border-b-4 border-t-2 border-l-2 border-ais-new-light-blue'
       }
     >
-      {pulsingDiv}
-      <div className="font-bold text-ais-dark-blue text-sm flex flex-wrap justify-between gap-2">
+      <div className="bg-slate-300 w-full h-52 rounded-2xl mb-4"></div>
+      <div className="font-bold text-ais-dark-blue text-xs flex flex-wrap justify-between gap-2">
         {eventType.toUpperCase()}
-        <div className="flex items-center text-gray-600">
-          <CalendarTodayIcon style={{ fontSize: 18 }} />
+      </div>
+      <div className="flex text-xl font-bold py-2">{title}</div>
+      <div className="mb-2 font-bold text-ais-dark-blue text-xs flex flex-wrap justify-between gap-2">
+        <div className="flex text-gray-600">
+          <CalendarTodayIcon style={{ fontSize: 14 }} />
           <div className="mx-2 ">{eventTime}</div>
         </div>
       </div>
-      <div className="text-xl font-bold py-2">{title}</div>
       <div>
-        <div className="text-md">{description}</div>
+        <div className="text-xs">{description}</div>
       </div>
-      {tagDiv}
-      <div className="flex text-ais-light-blue text-sm gap-4 font-bold justify-end pt-2">
+      <div className="flex text-ais-light-blue text-sm gap-4 font-bold pt-6">
         <Link href={eventLink}>LEARN MORE</Link>
         <Menu as="div" className="relative">
           <Menu.Button className="font-bold">SAVE</Menu.Button>
